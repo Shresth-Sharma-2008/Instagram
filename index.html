@@ -31,17 +31,18 @@
             position:absolute;
             top:6vh;
             opacity:0%;
+            right:50vw;
         }
         #main{
             position:absolute;
             top:6vh;
-            left:52vw;
+            right:8vw;
         }
         #id{
             position:absolute;
-            left:57.5vw;
-            width:20.75vw;
-            height:5.5vh;
+            right:12.5vw;
+            width:250px;
+            height:35px;
             top:29.5vh;
             border-style:solid;
             border-width:1px;
@@ -49,9 +50,10 @@
         }
         #pass{
             position:absolute;
-            left:57.5vw;
-            width:20.75vw;
-            height:5.5vh;
+            /* le ft:57.5vw; */
+            right:12.5vw;
+            width:250px;
+            height:35px;
             top:36.5vh;
             border-style:solid;
             border-width:1px;
@@ -59,9 +61,10 @@
         }
         #log{
             position:absolute;
-            left:57.52vw;
-            width:21.1vw;
-            height:5.1vh;
+            /* left:57.52vw; */
+            right:12.5vw;
+            width:250px;
+            height:35px;
             top:44.8vh;
             border-style:none;
             border-radius:8px;
@@ -70,7 +73,8 @@
         }
         #a{
             position:absolute;
-            left:72.15vw;
+            right:14vw;
+            /* left:72.15vw; */
             top:77.3vh;
             color:rgb(70, 133, 251);
             text-decoration:none;
@@ -81,7 +85,7 @@
             position:absolute;
             left:0px;
             top:110vh;
-            width:99vw;
+            width:98vw;
         }
         </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -124,8 +128,24 @@
             opa5 = 0;
             a = 1;
             b = 0;
-            opa4 = 0;
+            c = 1;
             function img(){
+                if(self.innerWidth > 1000){
+                if(c == 0){
+                    opa1 = 100;
+                    opa2 = 0;
+                    opa3 = 0;
+                    opa4 = 0;
+                    opa5 = 0;
+                    a = 1;
+                    b = 0;
+                    c = 1;
+                    document.getElementById('main').style.right = '8vw';
+                    document.getElementById('id').style.right = '12.5vw';
+                    document.getElementById('pass').style.right = '12.5vw';
+                    document.getElementById('log').style.right = '12.5vw';
+                    document.getElementById('a').style.right = '14vw';
+                }
                 if(b > 0){
                     b -= 1
                 }
@@ -193,6 +213,20 @@
                         b = 600
                     }
                 }
+            }
+            else{
+                opa1 = 0
+                opa2 = 0
+                opa3 = 0
+                opa4 = 0
+                opa5 = 0
+                document.getElementById('main').style.right = (self.innerWidth/2-195) +'px' ;
+                document.getElementById('id').style.right = (self.innerWidth/2-140) +'px' ;
+                document.getElementById('pass').style.right = (self.innerWidth/2-140) +'px' ;
+                document.getElementById('log').style.right = (self.innerWidth/2-140) +'px' ;
+                document.getElementById('a').style.right = (self.innerWidth/2-130) +'px' ;
+                c= 0
+            }
                 img1.style.opacity = opa1+'%';
                 img2.style.opacity = opa2+'%';
                 img3.style.opacity = opa3+'%';
